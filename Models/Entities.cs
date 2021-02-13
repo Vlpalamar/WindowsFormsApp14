@@ -26,11 +26,11 @@ namespace WindowsFormsApp14.Models
         public int treckCount { get; set; }
 
         //!!
-        public List<RelationShip.DiscGeners>  discsGeners { get; set; }
+      public Genre genre { get; set; }
 
 
 
-        public DateTime realiseDate { get; set; }
+        public DateTime? realiseDate { get; set; }
 
         [Column(TypeName ="Money")]
         public decimal selfCost { get; set; }
@@ -38,7 +38,7 @@ namespace WindowsFormsApp14.Models
         [Column(TypeName = "Money")]
         public decimal sellPrice { get; set; }
 
-        public int discCount { get; set; } = 10;
+        public int discCount { get; set; } 
 
         public override string ToString()
         {
@@ -56,7 +56,7 @@ namespace WindowsFormsApp14.Models
 
 
         //!!
-        public List<RelationShip.DiscGeners> discsGeners { get; set; }
+        public List<Disc>  discs{ get; set; }
 
     }
 

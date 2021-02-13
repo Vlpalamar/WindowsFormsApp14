@@ -13,7 +13,7 @@ namespace WindowsFormsApp14.Models
         public DbSet<Band> bands { get; set; }
         public DbSet<Publisher> publishers { get; set; }
 
-        public DbSet<RelationShip.DiscGeners> DiscGeners { get; set; }
+        
 
 
         public DBContext()
@@ -31,18 +31,9 @@ namespace WindowsFormsApp14.Models
                 .HasOne<Publisher>(d => d.publisher)
                 .WithMany(p => p.discs);
 
-
-            modelBuilder.Entity<RelationShip.DiscGeners>().HasKey(DG => new { DG.discId, DG.genreId });
-
-            modelBuilder.Entity<RelationShip.DiscGeners>()
-                .HasOne<Disc>(dg => dg.disc)
-                .WithMany(d => d.discsGeners)
-                .HasForeignKey(dg => dg.discId);
-
-            modelBuilder.Entity<RelationShip.DiscGeners>()
-               .HasOne<Genre>(dg => dg.genre)
-               .WithMany(g=> g.discsGeners)
-               .HasForeignKey(dg => dg.genreId);
+            modelBuilder.Entity<Disc>()
+               .HasOne<Genre>(d => d.genre)
+               .WithMany(p => p.discs);
 
 
 

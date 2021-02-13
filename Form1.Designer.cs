@@ -57,6 +57,7 @@ namespace WindowsFormsApp14
             this.Add_Button.TabIndex = 1;
             this.Add_Button.Text = "Add";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // Remove_btn
             // 
