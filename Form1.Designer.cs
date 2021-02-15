@@ -37,6 +37,11 @@ namespace WindowsFormsApp14
             this.DiscBox = new System.Windows.Forms.ComboBox();
             this.Count_box = new System.Windows.Forms.Label();
             this.Bank_lbl = new System.Windows.Forms.Label();
+            this.Cost_lbl = new System.Windows.Forms.Label();
+            this.ResultOfSearchTree = new System.Windows.Forms.TreeView();
+            this.serch_box = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.WithSaleLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Sell_Button
@@ -77,6 +82,7 @@ namespace WindowsFormsApp14
             this.Edit_btn.TabIndex = 3;
             this.Edit_btn.Text = "Edit";
             this.Edit_btn.UseVisualStyleBackColor = true;
+            this.Edit_btn.Click += new System.EventHandler(this.Edit_btn_Click);
             // 
             // Sale_btn
             // 
@@ -86,6 +92,7 @@ namespace WindowsFormsApp14
             this.Sale_btn.TabIndex = 4;
             this.Sale_btn.Text = "Add discount";
             this.Sale_btn.UseVisualStyleBackColor = true;
+            this.Sale_btn.Click += new System.EventHandler(this.Sale_btn_Click);
             // 
             // DiscBox
             // 
@@ -114,11 +121,58 @@ namespace WindowsFormsApp14
             this.Bank_lbl.TabIndex = 8;
             this.Bank_lbl.Text = "0$";
             // 
+            // Cost_lbl
+            // 
+            this.Cost_lbl.AutoSize = true;
+            this.Cost_lbl.Location = new System.Drawing.Point(558, 378);
+            this.Cost_lbl.Name = "Cost_lbl";
+            this.Cost_lbl.Size = new System.Drawing.Size(19, 15);
+            this.Cost_lbl.TabIndex = 9;
+            this.Cost_lbl.Text = "0$";
+            // 
+            // ResultOfSearchTree
+            // 
+            this.ResultOfSearchTree.Location = new System.Drawing.Point(406, 37);
+            this.ResultOfSearchTree.Name = "ResultOfSearchTree";
+            this.ResultOfSearchTree.Size = new System.Drawing.Size(121, 97);
+            this.ResultOfSearchTree.TabIndex = 10;
+            this.ResultOfSearchTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.ResultOfSearchTree_NodeMouseDoubleClick);
+            // 
+            // serch_box
+            // 
+            this.serch_box.Location = new System.Drawing.Point(281, 37);
+            this.serch_box.Name = "serch_box";
+            this.serch_box.Size = new System.Drawing.Size(119, 23);
+            this.serch_box.TabIndex = 11;
+            this.serch_box.TextChanged += new System.EventHandler(this.serch_box_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(326, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Search";
+            // 
+            // WithSaleLbl
+            // 
+            this.WithSaleLbl.AutoSize = true;
+            this.WithSaleLbl.Location = new System.Drawing.Point(488, 351);
+            this.WithSaleLbl.Name = "WithSaleLbl";
+            this.WithSaleLbl.Size = new System.Drawing.Size(0, 15);
+            this.WithSaleLbl.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 450);
+            this.Controls.Add(this.WithSaleLbl);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.serch_box);
+            this.Controls.Add(this.ResultOfSearchTree);
+            this.Controls.Add(this.Cost_lbl);
             this.Controls.Add(this.Bank_lbl);
             this.Controls.Add(this.Count_box);
             this.Controls.Add(this.DiscBox);
@@ -145,6 +199,11 @@ namespace WindowsFormsApp14
         private System.Windows.Forms.ComboBox DiscBox;
         private System.Windows.Forms.Label Count_box;
         private System.Windows.Forms.Label Bank_lbl;
+        private System.Windows.Forms.Label Cost_lbl;
+        private System.Windows.Forms.TreeView ResultOfSearchTree;
+        private System.Windows.Forms.TextBox serch_box;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label WithSaleLbl;
     }
 }
 

@@ -28,7 +28,7 @@ namespace WindowsFormsApp14.Models
         //!!
       public Genre genre { get; set; }
 
-
+        public int? discount { get; set; } = 0;
 
         public DateTime? realiseDate { get; set; }
 
@@ -38,7 +38,7 @@ namespace WindowsFormsApp14.Models
         [Column(TypeName = "Money")]
         public decimal sellPrice { get; set; }
 
-        public int discCount { get; set; } 
+        public int discCount { get; set; }
 
         public override string ToString()
         {
@@ -58,6 +58,11 @@ namespace WindowsFormsApp14.Models
         //!!
         public List<Disc>  discs{ get; set; }
 
+        public override string ToString()
+        {
+            return name;
+
+        }
     }
 
     public class Band
@@ -68,6 +73,11 @@ namespace WindowsFormsApp14.Models
         public string name { get; set; }
 
         public List<Disc> discs { get; set; }
+        public override string ToString()
+        {
+            return name;
+
+        }
 
     }
 
@@ -78,6 +88,11 @@ namespace WindowsFormsApp14.Models
         [MaxLength(30)]
         public string name { get; set; }
         public List<Disc> discs { get; set; }
+        public override string ToString()
+        {
+            return name;
+
+        }
     }
 
 }
